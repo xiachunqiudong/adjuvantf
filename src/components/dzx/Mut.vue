@@ -9,7 +9,7 @@
         remote
         placeholder="please enter gene symbol"
         :remote-method="remoteMethod"
-        @change="getMethyByGene"
+        @change="logfcAndMut"
       >
         <!-- remote-method封装好的钩子函数。当用户在输入框中输入内容的时候，会触发这个函数的执行，
         把输入框对应的值作为参数带给回调函数，loading的意思就是远程搜索的时候等待的时间，即：加载中-->
@@ -53,10 +53,9 @@
         }
       },
       logfcAndMut() {
-        let geneAndCancer = {cancer: '', gene: this.gene};
-        this.$http.post(this.api.reqURL + "/ana/general/logfcAndMut", geneAndCancer)
+        this.$http.get(this.api.dzxURL + "/mut/" + this.gene)
           .then(res => {
-            this.logfcAndMutData = res.data.data;
+            this.logfcAndMutData = res.data;
             this.mutInit();
           })
       },

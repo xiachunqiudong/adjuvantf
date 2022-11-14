@@ -60,7 +60,7 @@ export default {
 <style>
 
   #mainContent {
-    max-width: 1300px;
+    max-width: 1400px;
     min-width: 600px;
     margin: auto;
   }

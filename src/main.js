@@ -15,6 +15,8 @@ Vue.prototype.api = api_
 Vue.prototype.$echarts = echarts
 Vue.use(ElementUI)
 
+axios.defaults.baseURL = api_.baseURL
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -1,6 +1,6 @@
 <template>
-  <div style="margin-top: 100px; text-align: center">
-    <el-tabs @tab-click="handleClick" type="border-card" style="border-color: #333745; border-width: 2px">
+  <div>
+    <el-tabs type="border-card" style="border-color: #3a8ee6; border-width: 2px">
       <el-tab-pane label="mRNA Expression">
         <DiffR></DiffR>
       </el-tab-pane>
@@ -22,18 +22,19 @@
   import Methy from "./dzx/Methy";
   import Mut from "./dzx/Mut";
   import Cnv from "./dzx/Cnv";
+  import Test from "./dzx/Test";
+  import Method from "./dzx/Method";
   export default {
     name: "Analysis",
     components: {
       DiffR,
       Methy,
       Mut,
-      Cnv
+      Cnv,
+      Test,
+      Method
     },
     methods: {
-      handleClick() {
-        this.refs.getMethyByGene();
-      }
     },
   }
 </script>
